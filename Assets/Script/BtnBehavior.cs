@@ -6,7 +6,7 @@ using Vuforia;
 public class BtnBehavior : MonoBehaviour, IVirtualButtonEventHandler
 {
 
-    [SerializeField] private GameObject mascot;
+    [SerializeField] private Transform mascot;
     VirtualButtonBehaviour virtualBtn;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,13 @@ public class BtnBehavior : MonoBehaviour, IVirtualButtonEventHandler
 
     void IVirtualButtonEventHandler.OnButtonPressed(VirtualButtonBehaviour vb)
     {
-        mascot.SetActive(true);
+        Debug.Log("Working");
+        mascot.Rotate(Vector3.up*40f*Time.deltaTime, Space.World);
+        
     }
 
     void IVirtualButtonEventHandler.OnButtonReleased(VirtualButtonBehaviour vb)
     {
-        mascot.SetActive(false);
+       // mascot.SetActive(false);
     }
 }
