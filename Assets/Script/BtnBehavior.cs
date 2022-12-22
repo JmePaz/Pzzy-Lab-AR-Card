@@ -19,7 +19,7 @@ public class BtnBehavior : MonoBehaviour, IVirtualButtonEventHandler
     void IVirtualButtonEventHandler.OnButtonPressed(VirtualButtonBehaviour vb)
     {
         Debug.Log("Working");
-        mascot.Rotate(Vector3.up*40f*Time.deltaTime, Space.World);
+        mascot.Translate(Vector3.up * 10f * Time.deltaTime);
         
     }
 
